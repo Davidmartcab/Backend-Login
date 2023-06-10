@@ -1,5 +1,3 @@
-<!-- Create a README which say the necesary environment variables to use the backend -->
-
 ## Environment variables
   Create a `.env` file with the following environment variables:
 
