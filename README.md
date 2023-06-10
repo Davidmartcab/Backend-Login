@@ -18,23 +18,23 @@
 
 - `docker run -p 4000:4000 -d --env PORT=<PORT> --env MONGO_URI='<MONGO_URI>' --env JWT_SECRET='<SECRET>' backendlogin`
 
-## For use
+## Endpoints
 
-- `/api/login:`
-    - `POST:` Login with email and password
-        -`Body:`
-            - `email: String`
-            - `password: String`
+- `/api/login`
+  - `POST`: Iniciar sesión con correo electrónico y contraseña
+    - Body:
+      - email: String
+      - password: String
 
-- `/api/register:`
-    - `POST:` Register with username, email and password
-        -`Body:`
-            - `username: String`
-            - `email: String`
-            - `password: String`
+- `/api/register`
+  - `POST`: Registrarse con nombre de usuario, correo electrónico y contraseña
+    - Body:
+      - username: String
+      - email: String
+      - password: String
 
-- `/api/logout:`
-    - `POST:` Logout
+- `/api/logout`
+  - `POST`: Cerrar sesión
 
-- `/api/profile:`
-    - `GET`: Get the profile of the user if the token is valid and refresh the token
+- `/api/profile`
+  - `GET`: Obtener el perfil del usuario si el token es válido y actualizar el token
