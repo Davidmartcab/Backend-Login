@@ -7,17 +7,17 @@
 
 ## Create the image
 
-- `docker build -t backendlogin .`
+- `docker build -t <NAME> .`
 
 ## Run the container with default environment variables
   It use the default environment variables in the `.env` file
 
-- `docker run -p 4000:4000 -d backendlogin`
+- `docker run -p 4000:4000 -d <NAME>`
 
 ## Run the container with custom environment variables
   It use the environment variables passed as arguments, if they are not passed, it use the default environment variables in the `.env` file
 
-- `docker run -p <EXTERNAL_PORT>:<PORT> -d --env PORT=<PORT> --env MONGO_URI='<MONGO_URI>' --env JWT_SECRET='<SECRET>' backendlogin`
+- `docker run -p <EXTERNAL_PORT>:<PORT> -d --env PORT=<PORT> --env MONGO_URI='<MONGO_URI>' --env JWT_SECRET='<SECRET>' <NAME>`
 
 ## Endpoints
   This is the list of endpoints that the server has and the methods that they accept with the accepted body parameters
