@@ -21,20 +21,20 @@
 ## For use
 
 - `/api/login:`
-    - `POST`: Login with email and password
+    - `POST:` Login with email and password
         -`Body:`
             - `email: String`
             - `password: String`
 
 - `/api/register:`
-    - `POST`: Register with username, email and password
+    - `POST:` Register with username, email and password
         -`Body:`
             - `username: String`
             - `email: String`
             - `password: String`
 
 - `/api/logout:`
-    - `POST`: Logout
+    - `POST:` Logout
 
 - `/api/profile:`
     - `GET`: Get the profile of the user if the token is valid and refresh the token
