@@ -1,6 +1,7 @@
 <!-- Create a README which say the necesary environment variables to use the backend -->
 
 ## Environment variables
+  Create a `.env` file with the following environment variables:
 
 - `PORT`: Port where the server will be listening
 - `MONGO_URI`: URI of the MongoDB database
@@ -21,20 +22,21 @@
 ## Endpoints
 
 - `/api/login`
-  - `POST`: Iniciar sesión con correo electrónico y contraseña
+  - `POST`: Login with email and password
     - Body:
       - email: String
       - password: String
 
 - `/api/register`
-  - `POST`: Registrarse con nombre de usuario, correo electrónico y contraseña
+  - `POST`: Register with username, email, and password
     - Body:
       - username: String
       - email: String
       - password: String
 
 - `/api/logout`
-  - `POST`: Cerrar sesión
+  - `POST`: Logout
 
 - `/api/profile`
-  - `GET`: Obtener el perfil del usuario si el token es válido y actualizar el token
+  - `GET`: Get the user's profile if the token is valid and refresh the token
+
