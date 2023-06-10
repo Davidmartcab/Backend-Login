@@ -84,6 +84,9 @@ export const profile = async (req, res) => {
 
     if (!userFound) return res.status(400).json({ message: "User not found" });
 
+    const newToken = await createToken({ id: userFound._id });
+
+    res.cookie("token", newToken)
     res.status(200).json({
         id: userFound._id,
         username: userFound.username,
