@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { createToken } from "../libs/jwt.js";
+import jwt from "jsonwebtoken";
 
 /*
     Codes:
@@ -91,5 +92,17 @@ export const profile = async (req, res) => {
         id: userFound._id,
         username: userFound.username,
         email: userFound.email,
+    })
+}
+
+export const verify = async (req, res) => {
+    const token = req.cookies.token;
+
+    if (!token) return res.status(401).json({ message: "Unauthorized" });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) return res.status(401).json({ message: "Unauthorized" });
+
+        res.status(200).json({ message: "User verified", user: decoded.id })
     })
 }

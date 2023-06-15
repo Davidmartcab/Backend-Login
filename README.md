@@ -41,3 +41,6 @@
 - `/api/profile`
   - `GET`: Get the user's profile if the token is valid and refresh the token
 
+- `/api/verify`
+  - `GET`: Verify if the token is valid for requests from other services
+
