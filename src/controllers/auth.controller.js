@@ -40,7 +40,7 @@ export const register = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({
-            message: error.message || "Something goes wrong creating a user"
+            message: "Something goes wrong creating a user"
         });
     }
 
@@ -55,7 +55,7 @@ export const login = async (req, res) => {
 
         const matchPassword = await bcrypt.compare(password, userFound.password);
 
-        if (!matchPassword) return res.status(400).json({ message: "Incorrect password" });
+        if (!matchPassword) return res.status(400).json({ message: "Bad credentials" });
 
         const token = await createToken({ id: userFound._id });
 
@@ -71,7 +71,7 @@ export const login = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({
-            message: error.message || "Something goes wrong creating a user"
+            message: error.message || "Something goes wrong login a user"
         });
     }
 }
