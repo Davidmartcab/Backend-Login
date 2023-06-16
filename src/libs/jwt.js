@@ -5,7 +5,7 @@ export function createToken(payload) {
         jwt.sign(
             payload,
             process.env.JWT_SECRET,
-            { expiresIn: 3600 },
+            { expiresIn: '1h' },
             (err, token) => {
                 if (err) reject(err);
                 else resolve(token);
