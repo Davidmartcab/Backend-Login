@@ -3,7 +3,6 @@
 
 - `PORT`: Port where the server will be listening
 - `MONGO_URI`: URI of the MongoDB database
-- `JWT_SECRET`: Secret key to sign the JWT tokens
 
 ## Create the image
 
@@ -17,7 +16,7 @@
 ## Run the container with custom environment variables
   It use the environment variables passed as arguments, if they are not passed, it use the default environment variables in the `.env` file
 
-- `docker run -p <EXTERNAL_PORT>:<PORT> -d --env PORT=<PORT> --env MONGO_URI='<MONGO_URI>' --env JWT_SECRET='<SECRET>' <NAME>`
+- `docker run -p <EXTERNAL_PORT>:<PORT> -d --env PORT=<PORT> --env MONGO_URI='<MONGO_URI>' <NAME>`
 
 ## Endpoints
   This is the list of endpoints that the server has and the methods that they accept with the accepted body parameters
