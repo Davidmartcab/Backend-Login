@@ -7,8 +7,6 @@ import { connectDB } from "./db.js";
 let rand = random(100)
 process.env.JWT_SECRET = rand
 
-console.log(process.env.JWT_SECRET)
-
 app.listen(process.env.PORT, () => {
     console.log(`>>> Server running on port: ${process.env.PORT}`)
     connectDB()
