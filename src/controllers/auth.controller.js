@@ -13,7 +13,7 @@ import jwt from "jsonwebtoken";
 */
 
 export const register = async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password, role } = req.body;
 
     try {
         // Encrypt password
@@ -22,7 +22,8 @@ export const register = async (req, res) => {
         const newUser = new User({
             username,
             email,
-            password: passwordHash
+            password: passwordHash,
+            role
         })
         const userSaved = await newUser.save();
 
@@ -58,7 +59,7 @@ export const login = async (req, res) => {
         if (!matchPassword) return res.status(400).json({ message: "Bad credentials" });
 
         const token = await createToken({ id: userFound._id });
-
+        console.log(userFound)
         res.cookie("token", token)
         res.status(200).json({
             id: userFound._id,
@@ -66,7 +67,8 @@ export const login = async (req, res) => {
             email: userFound.email,
             createdAt: userFound.createdAt,
             updatedAt: userFound.updatedAt,
-            token: token
+            token: token,
+            role: userFound.role
         })
 
     } catch (error) {
@@ -94,7 +96,8 @@ export const profile = async (req, res) => {
         id: userFound._id,
         username: userFound.username,
         email: userFound.email,
-        token: newToken
+        token: newToken,
+        role: userFound.role
     })
 }
 
